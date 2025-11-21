@@ -106,12 +106,14 @@ C再将自己的fork库工作目录切换回main分支，利用`git pull upstrea
 
 <h3 id="ssh-key-connection">* 通过ssh密钥连接远程库(macos linux等类unix操作系统版)</h3>
 1. 首先在本地终端生成ssh密钥，用指令` ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_your_accout -C "your_account_email@example.com"`
-这里几个选项的表示分别为
+这里几个选项的表示分别为:
+
+```c
+//  -t 指定算法 (ed25519 是推荐的现代算法,也可以用rsa等经典非对称加密算法)
+//  -f 指定文件名 (我们使用 your_account_rsa 或 your_account_ed25519)
+//  -C 添加注释 (用于识别是哪个账号的密钥),可以随意填写
 ```
-# -t 指定算法 (ed25519 是推荐的现代算法,也可以用rsa等经典非对称加密算法)
-# -f 指定文件名 (我们使用 your_account_rsa 或 your_account_ed25519)
-# -C 添加注释 (用于识别是哪个账号的密钥),可以随意填写
-```
+
 添加过程中会让你设置一个访问这个密钥的密码，请记住它，之后也是有用的
 
 2. 将公钥添加到对应的github账号上面，注意添加内容要严格复制粘帖公钥文件里面的内容
